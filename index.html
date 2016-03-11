@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Guess a Number</title>
+    <title>Guess a NUMBER</title>
   </head>
 
   <body>
@@ -17,7 +17,7 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
 
-          <h1 id="project_title">Guess a Number</h1>
+          <h1 id="project_title">Guess a NUMBER</h1>
           <h2 id="project_tagline">Feeling lucky?</h2>
 
 
@@ -29,7 +29,7 @@
       <section id="main_content" class="inner">
 <form>
 
-<p>I'm thinking of a number between:</p>
+<p>I'm thinking of a NUMBER between:</p>
 
 <p><code>0000001</code></p>
 <p>and</p>
@@ -37,11 +37,13 @@
 
 <p><strong>Have a guess!</strong></p>
 
-<p><input type=text value='500000' id='guess' /></p>
-<p><input type=submit value='Guess' />
+<p><input type=text value='500000' id='guess' />
+<input type=hidden value='500000' id='session_id' /> <span id=result />
+
+<!-- no, the session_id is *not* the guid. Unless you're very very lucky, I suppose. --></p>
+<p><input type=submit value='Guess' /></p>
+
 </form>
-
-
       </section>
     </div>
 
