@@ -39,10 +39,17 @@
 
 <p><input type=text value='80000000-0000-0000-0000-000000000000' id='users_guess' /> <span id=message class='' />
 </p>
-<p><input type=submit value='Guess' id='submit_guess' />
-<input type=hidden value='' id='session_id' /> <!-- No! the session_id is *not* the guid. Unless you're very very lucky, I suppose. -->
-
+<p id='submit_paragraph'><input type=submit value='Guess' id='submit_guess' /> <span class='progress' />&nbsp;</span>
+<input type=hidden value='' id='session_id' /> <!-- Sorry... the session_id is *not* the guid. Unless you're *very* lucky, I suppose. -->
 </p>
+
+<div  id='winner_area' class='start_hidden'>
+<h1>Winner!</h1>
+<p><strong>User name</strong> (for leaderboard)</p>
+<p><input type="text" value="(Anonymous)" id="username" /></p>
+<input type=submit value='Submit Name' id='submit_winner' /> <span class='progress' />&nbsp;</span>
+</div>
+
 
 </form>
       </section>
@@ -51,7 +58,7 @@
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">from <a href='http://secretGeek.net'>secretGeek</a></p>
+        <p class="copyright">Guess a GUID from <a href="http://secretGeek.net">secretGeek</a>. View <a href="leaderboard.html">leaderboard</a>.</p>
       </footer>
     </div>
 

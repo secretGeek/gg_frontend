@@ -370,23 +370,44 @@ Full-Width Styles
   background: #212121;
 }
 
-#users_guess {
+#users_guess , #username{
   min-width:400px;
   padding:5px;
   font-family: Consolas, Courier New, Courier, monospace;
   font-size:14pt;
 }
 
-input [type="submit"],#submit_guess {
+input [type="submit"],#submit_guess , #submit_winner{
     color: #ffffff;
     background-color: #428bca;
     border-color: #357ebd;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 6px;
-  cursor:pointer;
-    
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 6px;
+    cursor:pointer;
+}
+
+.progress
+{
+    margin-top: 7px;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.progress.waiting
+{
+    background-image: url(../images/spinner.gif);
+    background-repeat: no-repeat;
+}
+
+.start_hidden {
+  /*display:none;*/
+  visibility:hidden;
+}
+.and_show  {
+  display: block;
 }
 
 /*******************************************************************************
