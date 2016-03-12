@@ -1,6 +1,6 @@
 //(function () {
-    var domain = "http://localhost:6414/";
-    //var domain = "http://guessaguid.apphb.com/";
+    //var domain = "http://localhost:6414/";
+    var domain = "http://guessaguid.apphb.com/";
 
     function getLeaderBoard() {
         var url = domain + "api/Leaderboard";
@@ -55,11 +55,8 @@
         $('#message').html(result.Message + " (" + result.NumGuesses + ")");
         $('#message').effect("highlight");
         $('.progress').removeClass('waiting');
-        jalert(result);
-        if (result.Success === false) {
+        if (result.Success === true) {
             $('#submit_paragraph').hide();
-            //$('#submit_guess').hide();
-            //$('#user_area').fadeIn(1500).effect("highlight"); //addClass('and_show')
             $('#winner_area').css('visibility','visible').hide().fadeIn(1500).effect("highlight", {}, 3000);
         }
         $('input[type="submit"]').prop('disabled', false);
@@ -105,8 +102,6 @@
         if ($('#leaderboard').length>0) {
             getLeaderBoard();
         }
-        
-        
     });
     
 //})();
