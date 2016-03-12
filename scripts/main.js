@@ -21,13 +21,15 @@
     }
 
     function successAction(result) {
-       jalert(result);
+       $('#session_id').val(result.SessionID);
+       $('#message').html(result.Message);
+       $('#message').effect("highlight")
     }
     function jsonpCallback(j) {
-        jalert(j);
+        jalert(j, 'jsonP! ');
         //window.jQuery('#umg_modal').find('.progress').removeClass('waiting');
-
-        if (j.Success == true) {
+        //$('#message').html(j.Message);
+        /*if (j.Success == true) {
             //TODO: close the modal. And show success in a new simple modal.
             //      in order to let the user browse to the result.
             alert('Posted to YouMustGet.It!');
@@ -35,7 +37,7 @@
             //TODO: show success in the current modal.
             //      in order to let the user browse to the result.
             jalert(j, 'jsonP! ');
-        }
+        }*/
     }
 
     function handleError(xhr, b, c) {
@@ -52,9 +54,8 @@
     function guess() {
         var result = {};
 
-        result.usersGuess = window.jQuery('#users_guess').val();
-        result.sessionID = window.jQuery('#session_id').val();
-        jalert(result);
+        result.usersGuess = $('#users_guess').val();
+        result.sessionID = $('#session_id').val();
         return result;
     }
     
@@ -62,13 +63,7 @@
         
         window.jQuery('form').submit(function (e) {
             try {
-            alert('sending!');
-                //TODOO: progress class.
-                //window.jQuery(this).find('.progress').addClass('waiting');
-                //window.jQuery('#umg_modal #error').hide();
-                //result = modalToJson('#umg_modal');
                 sendData(guess());
-
             } catch (errs) { jalert(errs, 'Error while posting, sorry.'); }
 
             e.preventDefault();

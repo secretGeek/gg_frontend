@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Guess a NUMBER</title>
+    <title>Guess a GUID</title>
   </head>
 
   <body>
@@ -17,7 +17,7 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
 
-          <h1 id="project_title">Guess a NUMBER</h1>
+          <h1 id="project_title">Guess a GUID</h1>
           <h2 id="project_tagline">Feeling lucky?</h2>
 
 
@@ -29,17 +29,20 @@
       <section id="main_content" class="inner">
 <form>
 
-<p>I'm thinking of a NUMBER between:</p>
+<p>I'm thinking of a GUID between:</p>
 
-<p><code>0000001</code></p>
+<p><code>00000000-0000-0000-0000-000000000000</code></p>
 <p>and</p>
-<p><code>1000000</code></p>
+<p><code>FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF</code></p>
 
 <p><strong>Have a guess!</strong></p>
 
-<p><input type=text value='500000' id='users_guess' /> <span id=Message class='' />
-<input type=hidden value='' id='session_id' /> <!-- No! the session_id is *not* the guid. Unless you're very very lucky, I suppose. --></p>
-<p><input type=submit value='Guess' id='submit_guess' /></p>
+<p><input type=text value='80000000-0000-0000-0000-000000000000' id='users_guess' /> <span id=message class='' />
+</p>
+<p><input type=submit value='Guess' id='submit_guess' />
+<input type=hidden value='' id='session_id' /> <!-- No! the session_id is *not* the guid. Unless you're very very lucky, I suppose. -->
+
+</p>
 
 </form>
       </section>
@@ -56,7 +59,8 @@
 
   </body>
    <script src="scripts/jquery-2.2.1.js"></script>
-    <script src="scripts/main.js"></script>
+   <script src="scripts/jquery-ui-1.11.4.js"></script>
+   <script src="scripts/main.js"></script>
 
 
 </html>
