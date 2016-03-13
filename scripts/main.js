@@ -4,7 +4,6 @@
 
     function getLeaderBoard() {
         var url = domain + "api/Leaderboard";
-        //$('.progress').addClass('waiting');
         var result = {};
         jQuery.ajax({
             url: url,
@@ -49,20 +48,43 @@
         });
     }
 
+    function submitWinner() {
+        var url = domain + "api/WinnersName";
+        var result = {};
+        result.usersGuess = $('#users_guess').val();
+        result.sessionID = $('#session_id').val();
+        result.userName = $('#username').val();
+        
+        $('.progress').addClass('waiting');
+        jQuery.ajax({
+            url: url,
+            data: result,
+            type: "GET",
+            dataType: "jsonp",
+            jsoncallback: "jsonpCallback",
+            success: winnerSubmitted,
+            error: handleError
+        });
+    
+    }
+    function winnerSubmitted(result) {
+        $('.progress').removeClass('waiting');
+        window.location.href = 'leaderboard.html';
+    }
     function successAction(result) {
         
         $('#session_id').val(result.SessionID);
-        $('#message').html(result.Message + " (" + result.NumGuesses + ")");
+        var plur = "es"; if (result.NumGuesses === 1) plur = "";
+        $('#message').html(result.Message + " (" + result.NumGuesses + " guess" + plur + ")");
         $('#message').effect("highlight");
         $('.progress').removeClass('waiting');
-        if (result.Success === true) {
+        if (result.Success === false) {
             $('#submit_paragraph').hide();
             $('#winner_area').css('visibility','visible').hide().fadeIn(1500).effect("highlight", {}, 3000);
         }
         $('input[type="submit"]').prop('disabled', false);
     }
     function jsonpCallback(j) {
-        //jalert(j, 'jsonP! ');
         $('.progress').removeClass('waiting');
     }
 
@@ -102,6 +124,10 @@
         if ($('#leaderboard').length>0) {
             getLeaderBoard();
         }
+        
+        $('#submit_winner').click(function (e) {
+            submitWinner();
+        });
+
     });
-    
 //})();
