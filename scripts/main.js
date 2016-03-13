@@ -78,7 +78,7 @@
         $('#message').html(result.Message + " (" + result.NumGuesses + " guess" + plur + ")");
         $('#message').effect("highlight");
         $('.progress').removeClass('waiting');
-        if (result.Success === false) {
+        if (result.Success === true) {
             $('#submit_paragraph').hide();
             $('#winner_area').css('visibility','visible').hide().fadeIn(1500).effect("highlight", {}, 3000);
         }
