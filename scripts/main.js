@@ -1,4 +1,4 @@
-//(function () {
+(function () {
     //var domain = "http://localhost:6414/";
     var domain = "http://guessaguid.apphb.com/";
 
@@ -128,6 +128,5 @@
         $('#submit_winner').click(function (e) {
             submitWinner();
         });
-
     });
-//})();
+})();
