@@ -120,6 +120,17 @@ a {
 
 a:hover, a:focus {text-decoration: underline;}
 
+#header_wrap header a {
+ text-decoration: underline;
+  color: #007edf;
+  text-shadow: none;
+
+}
+a:hover h1{
+  color: #007edf;
+}
+
+
 footer a {
   color: #F2F2F2;
   text-decoration: underline;
